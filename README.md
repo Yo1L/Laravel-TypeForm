@@ -64,7 +64,9 @@ foreach ($formChunks as $forms) {
 }
 ```
 
-## retrieve questions a form
+Here is a description of all [request parameters](https://developer.typeform.com/create/reference/retrieve-forms/).
+
+## Retrieve questions of a form 
 
 ```
 $jsonForm = TypeForm::getForm($this->formSlug);
@@ -80,6 +82,8 @@ foreach ($jsonForm['fields'] as $item) {
     }
 }
 ```
+
+Here is a description of all [request parameters](https://developer.typeform.com/create/reference/retrieve-form/).
 
 ## Responses
 
@@ -105,9 +109,10 @@ foreach (TypeForm::getResponsesByChunk("MyFormId", $params) as $responses) {
 }
 ```
 
+Here is a [JSON response explanation](https://developer.typeform.com/responses/JSON-response-explanation/) and all its [parameters](https://developer.typeform.com/responses/reference/retrieve-responses/).
 
 ## Webhooks
-This package manages the secret if you have specified one in your config (TYPEFORM_WEBHOOK_SECRET).
+This package manages the secret if you have specified one in your config (TYPEFORM_WEBHOOK_SECRET). Here is description on [webhooks security](https://developer.typeform.com/webhooks/secure-your-webhooks/).
 
 Register a webhook for a form:
 ```

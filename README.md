@@ -52,6 +52,60 @@ I higly advise to use the facade as all examples will use it.
 use TypeForm;
 ```
 
+## Forms
+
+Retrieve all your forms:
+```
+$formChunks = TypeForm::getFormsByChunk();
+foreach ($formChunks as $forms) {
+    foreach ($forms['items'] as $form) {
+        Log::info($form['id']);
+    }
+}
+```
+
+## retrieve questions a form
+
+```
+$jsonForm = TypeForm::getForm($this->formSlug);
+
+foreach ($jsonForm['fields'] as $item) {
+    // $item is a question / section
+    Log::debug($item)
+
+    if ($item['type'] == 'group') {
+        foreach ($item['properties']['fields'] as $subItem) {
+            Log::debug($subItem);
+        }
+    }
+}
+```
+
+## Responses
+
+Retrieve all completed responses of a form:
+```
+$params = ['completed' => true];
+
+foreach (TypeForm::getResponsesByChunk("MyFormId", $params) as $responses) {
+    /**
+        1 response = 1 submitted forms
+        Each response contains all answers (unordered)
+     */
+    foreach ($responses['items'] as $jsonResponse) {
+        $submitted_at = Carbon::parse($jsonResponse['submitted_at']);
+        $id = $jsonResponse['token'];
+
+        foreach ($jsonResponse['answers'] as $jsonAnswer) {
+            /**
+             Store your answers ?
+             */
+        }
+    }
+}
+```
+
+
 ## Webhooks
 This package manages the secret if you have specified one in your config (TYPEFORM_WEBHOOK_SECRET).
 

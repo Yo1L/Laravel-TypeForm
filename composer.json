@@ -1,0 +1,38 @@
+{
+    "name": "yo1l/laravel-typeform",
+    "description": "A Laravel Facade to retrieve typeform responses and to manage webhooks calls",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "laravel/framework": "~5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yo1L\\LaravelTypeForm\\": "Laravel-TypeForm/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yo1L\\LaravelTypeForm\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yo1L\\LaravelTypeForm\\TypeFormServiceProvider"
+            ],
+            "aliases": {
+                "TypeForm": "Yo1L\\LaravelTypeForm\\TypeFormFacade"
+            }
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Yo1L",
+            "email": "yleviavant@gmail.com"
+        }
+    ]
+}

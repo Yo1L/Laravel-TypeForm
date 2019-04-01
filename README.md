@@ -74,7 +74,6 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use TypeForm;
-use App\Jobs\SyncFormResponses;
 
 class TypeFormController extends Controller
 {

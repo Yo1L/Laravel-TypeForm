@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Yo1L\\LaravelTypeForm\\": "Laravel-TypeForm/src/"
+            "Yo1L\\LaravelTypeForm\\": "src"
         }
     },
     "autoload-dev": {

@@ -6,7 +6,6 @@ namespace Yo1L\LaravelTypeForm;
  * @author Yo1L <kyleviavant@gmail.com>
  */
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Routing\Router;
 
 class TypeFormServiceProvider extends ServiceProvider
 {

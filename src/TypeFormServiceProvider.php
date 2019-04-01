@@ -38,7 +38,7 @@ class TypeFormServiceProvider extends ServiceProvider
         });
 
         $this->app->alias(TypeForm::class, 'TypeForm');
-
-        config(['config/typeform.php']);
+        // Default Package Configuration
+        $this->mergeConfigFrom(__DIR__.'/config/typeform.php', 'typeform');
     }
 }

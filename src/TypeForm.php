@@ -4,6 +4,7 @@ namespace Yo1L\LaravelTypeForm;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
+use GuzzleHttp\HandlerStack;
 use Illuminate\Http\Request;
 use Log;
 
@@ -11,12 +12,29 @@ class TypeForm
 {
     protected $api = null;
 
-    public function __construct()
+    public function __construct($mock = null)
     {
-        $this->api = new Client([
+        $config = [
             'base_uri' => config('typeform.base_uri'),
             'headers' => $this->getHeaders(),
-        ]);
+        ];
+
+        if ($mock) {
+            $config['handler'] = HandlerStack::create($mock);
+        }
+        $this->api = new Client($config);
+    }
+
+    /**
+     * change the handler, usefull for testing purpose
+     *
+     * @param $handler
+     * @return void
+     */
+    public function setHandler($handler)
+    {
+        
+        $this->api->setHandler($stack);
     }
 
     /**

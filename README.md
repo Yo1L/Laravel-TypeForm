@@ -1,5 +1,5 @@
 # Laravel-TypeForm
-A simple Laravel 5.x Facade to retrieve typeform responses and to register/unregister webhooks.
+A simple Laravel 5 Facade to retrieve easily typeform responses and to validate/register/unregister webhooks.
 
 # Installation
 
@@ -112,7 +112,8 @@ foreach (TypeForm::getResponsesByChunk("MyFormId", $params) as $responses) {
 Here is a [JSON response explanation](https://developer.typeform.com/responses/JSON-response-explanation/) and all its [parameters](https://developer.typeform.com/responses/reference/retrieve-responses/).
 
 ## Webhooks
-This package manages the secret if you have specified one in your config (TYPEFORM_WEBHOOK_SECRET). Here is description on [webhooks security](https://developer.typeform.com/webhooks/secure-your-webhooks/).
+This package manages the secret if you have specified one in your config (TYPEFORM_WEBHOOK_SECRET).  
+Here is a description on [webhooks security](https://developer.typeform.com/webhooks/secure-your-webhooks/).
 
 Register a webhook for a form:
 ```

@@ -45,6 +45,26 @@ To publish the config, run the vendor publish command:
 php artisan vendor:publish --provider="Yo1L\LaravelTypeForm\TypeFormServiceProvider"
 ```
 
+Sample of config/typeform.php
+```
+<?php
+return [
+    'debug' => false,
+    'token' => env('TYPEFORM_TOKEN'),
+    'headers' => [],
+    'base_uri' => 'https://api.typeform.com/',
+    'webhook' => [
+        'base_uri' => env('TYPEFORM_WEBHOOK_BASE_URI', null), // if none app.url is used
+        'uri' => env('TYPEFORM_WEBHOOK_URI', '/api/webhook/typeform'),
+        'tag' => env('TYPEFORM_WEBHOOK_TAG', null),
+        'secret' => env('TYPEFORM_WEBHOOK_SECRET', null),
+        'verify_ssl' => env('TYPEFORM_WEBHOOK_VERIFY_SSL', true),
+    ],
+];
+```
+
+**TYPEFORM_TOKEN** is mandatory in order to retrieve all your data.  
+
 # Getting Started
 
 I higly advise to use the facade as all examples will use it.

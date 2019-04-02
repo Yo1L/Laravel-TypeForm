@@ -10,7 +10,7 @@ A simple Laravel 5 Facade to retrieve easily typeform responses and to validate/
 
 ## Composer
 ```
-composer require "yo1l/laravel-typeform:dev-master"
+composer require "yo1l/laravel-typeform"
 ```
 
 ## Service Provider

@@ -169,20 +169,20 @@ class TypeForm
      */
     public function getResponsesByChunk(string $formId, array $params = [])
     {
-        $total_items = 1;
-        while ($total_items>0) {
+        $token = null;
+        do {
             $result = $this->getResponses($formId, $params);
                 
             $token = $this->getLastResponseToken($result);
+            var_dump($token);
             if ($token) {
                 $params['before'] = $token;
             } else {
                 unset($params['before']);
             }
-            $total_items = $result['total_items'];
-
+            
             yield $result;
-        }
+        } while ($token);
     }
 
     /**

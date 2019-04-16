@@ -174,7 +174,6 @@ class TypeForm
             $result = $this->getResponses($formId, $params);
                 
             $token = $this->getLastResponseToken($result);
-            var_dump($token);
             if ($token) {
                 $params['before'] = $token;
             } else {

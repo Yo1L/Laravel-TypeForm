@@ -2,7 +2,6 @@
     "name": "yo1l/laravel-typeform",
     "description": "A simple Laravel Facade to retrieve typeform responses and to manage webhooks calls",
     "type": "library",
-    "version": "0.1.3",
     "require": {
         "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.3",
